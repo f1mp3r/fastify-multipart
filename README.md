@@ -1,3 +1,5 @@
+## This is a port for fastify-multipart to work with NestJS. It falls back from the nestjs request wrapper to raw request.
+
 # fastify-multipart
 
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
