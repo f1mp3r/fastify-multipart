@@ -20,6 +20,11 @@ const kMultipartHandler = Symbol('multipartHandler')
 const getDescriptor = Object.getOwnPropertyDescriptor
 
 function setMultipart (req, payload, done) {
+  if (!req.raw) {
+    // Support nestjs request wrapper
+    req.raw = req;
+    done = payload;
+  }
   // nothing to do, it will be done by the Request.multipart object
   req.raw[kMultipart] = true
   done()
